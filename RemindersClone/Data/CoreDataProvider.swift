@@ -14,6 +14,9 @@ class CoreDataProvider {
     let persistentContainer: NSPersistentContainer
     
     init() {
+        
+        // register transformers
+        ValueTransformer.setValueTransformer(UIColorTransformer(), forName: NSValueTransformerName("UIColorTransformer"))
         persistentContainer = NSPersistentContainer(name: "RemindersModel")
         persistentContainer.loadPersistentStores { descrtiption, error in
             if let error {

@@ -19,6 +19,7 @@ class ReminderService {
         let myList = MyList(context: viewContext)
         myList.name = name
         myList.color = color
+        print("Saved list \(myList.name)")
         try save()
     }
     

@@ -18,6 +18,7 @@
 		4D64B65D2B4F1B360050081E /* AddNewListVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64B65C2B4F1B360050081E /* AddNewListVIew.swift */; };
 		4D64B6612B4F1CAB0050081E /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64B6602B4F1CAB0050081E /* ColorPickerView.swift */; };
 		4D64B6642B4F34840050081E /* ReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64B6632B4F34840050081E /* ReminderService.swift */; };
+		4D64B6672B4F35B70050081E /* UIColorTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64B6662B4F35B70050081E /* UIColorTransformer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		4D64B65C2B4F1B360050081E /* AddNewListVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewListVIew.swift; sourceTree = "<group>"; };
 		4D64B6602B4F1CAB0050081E /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		4D64B6632B4F34840050081E /* ReminderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderService.swift; sourceTree = "<group>"; };
+		4D64B6662B4F35B70050081E /* UIColorTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorTransformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 		4D278F5B2B4EF08B0023C4E0 /* RemindersClone */ = {
 			isa = PBXGroup;
 			children = (
+				4D64B6652B4F359A0050081E /* Transformers */,
 				4D64B6622B4F34720050081E /* Services */,
 				4D64B65B2B4F1B190050081E /* Views */,
 				4D64B6522B4F18770050081E /* Models */,
@@ -118,6 +121,14 @@
 				4D64B6632B4F34840050081E /* ReminderService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		4D64B6652B4F359A0050081E /* Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				4D64B6662B4F35B70050081E /* UIColorTransformer.swift */,
+			);
+			path = Transformers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +204,7 @@
 				4D64B6612B4F1CAB0050081E /* ColorPickerView.swift in Sources */,
 				4D278F5F2B4EF08B0023C4E0 /* ContentView.swift in Sources */,
 				4D64B6512B4F17330050081E /* RemindersModel.xcdatamodeld in Sources */,
+				4D64B6672B4F35B70050081E /* UIColorTransformer.swift in Sources */,
 				4D278F5D2B4EF08B0023C4E0 /* RemindersCloneApp.swift in Sources */,
 				4D64B65D2B4F1B360050081E /* AddNewListVIew.swift in Sources */,
 				4D64B6562B4F18A50050081E /* MyList+CoreDataProperties.swift in Sources */,
