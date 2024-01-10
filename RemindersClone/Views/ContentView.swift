@@ -18,9 +18,7 @@ struct ContentView: View {
             VStack {
                 Text("Something or other")
                 
-                List(myListResults) { list in
-                    Text(list.name)
-                }
+                MyListsView(myLists: myListResults)
 //                Spacer()
                 
                 Button {
