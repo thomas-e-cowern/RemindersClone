@@ -17,9 +17,12 @@ struct MyListsView: View {
                 Spacer()
                 Text("No Reminders List Found")
             } else {
-                List {
-                    ForEach(myLists) { list in
-                        Text(list.name)
+                ForEach(myLists) { list in
+                    VStack {
+                        MyListsCellView(myList: list)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .font(.title3)
+                        Divider()
                     }
                 }
             }
