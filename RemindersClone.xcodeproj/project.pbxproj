@@ -16,6 +16,7 @@
 		4D64B6542B4F18910050081E /* MyList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64B6532B4F18910050081E /* MyList+CoreDataClass.swift */; };
 		4D64B6562B4F18A50050081E /* MyList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64B6552B4F18A50050081E /* MyList+CoreDataProperties.swift */; };
 		4D64B65D2B4F1B360050081E /* AddNewListVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64B65C2B4F1B360050081E /* AddNewListVIew.swift */; };
+		4D64B6612B4F1CAB0050081E /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64B6602B4F1CAB0050081E /* ColorPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		4D64B6532B4F18910050081E /* MyList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyList+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4D64B6552B4F18A50050081E /* MyList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4D64B65C2B4F1B360050081E /* AddNewListVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewListVIew.swift; sourceTree = "<group>"; };
+		4D64B6602B4F1CAB0050081E /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				4D64B65C2B4F1B360050081E /* AddNewListVIew.swift */,
 				4D278F5E2B4EF08B0023C4E0 /* ContentView.swift */,
+				4D64B6602B4F1CAB0050081E /* ColorPickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D64B6612B4F1CAB0050081E /* ColorPickerView.swift in Sources */,
 				4D278F5F2B4EF08B0023C4E0 /* ContentView.swift in Sources */,
 				4D64B6512B4F17330050081E /* RemindersModel.xcdatamodeld in Sources */,
 				4D278F5D2B4EF08B0023C4E0 /* RemindersCloneApp.swift in Sources */,
