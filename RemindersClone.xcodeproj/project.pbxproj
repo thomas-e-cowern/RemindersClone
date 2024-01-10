@@ -12,6 +12,9 @@
 		4D278F612B4EF08D0023C4E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D278F602B4EF08D0023C4E0 /* Assets.xcassets */; };
 		4D278F642B4EF08D0023C4E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D278F632B4EF08D0023C4E0 /* Preview Assets.xcassets */; };
 		4D64B64E2B4EFDAF0050081E /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64B64D2B4EFDAF0050081E /* CoreDataProvider.swift */; };
+		4D64B6512B4F17330050081E /* RemindersModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D64B64F2B4F17330050081E /* RemindersModel.xcdatamodeld */; };
+		4D64B6542B4F18910050081E /* MyList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64B6532B4F18910050081E /* MyList+CoreDataClass.swift */; };
+		4D64B6562B4F18A50050081E /* MyList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64B6552B4F18A50050081E /* MyList+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		4D278F602B4EF08D0023C4E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D278F632B4EF08D0023C4E0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4D64B64D2B4EFDAF0050081E /* CoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
+		4D64B6502B4F17330050081E /* RemindersModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RemindersModel.xcdatamodel; sourceTree = "<group>"; };
+		4D64B6532B4F18910050081E /* MyList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyList+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4D64B6552B4F18A50050081E /* MyList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,11 +59,13 @@
 		4D278F5B2B4EF08B0023C4E0 /* RemindersClone */ = {
 			isa = PBXGroup;
 			children = (
+				4D64B6522B4F18770050081E /* Models */,
 				4D64B64C2B4EFD950050081E /* Data */,
 				4D278F5C2B4EF08B0023C4E0 /* RemindersCloneApp.swift */,
 				4D278F5E2B4EF08B0023C4E0 /* ContentView.swift */,
 				4D278F602B4EF08D0023C4E0 /* Assets.xcassets */,
 				4D278F622B4EF08D0023C4E0 /* Preview Content */,
+				4D64B64F2B4F17330050081E /* RemindersModel.xcdatamodeld */,
 			);
 			path = RemindersClone;
 			sourceTree = "<group>";
@@ -76,6 +84,15 @@
 				4D64B64D2B4EFDAF0050081E /* CoreDataProvider.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		4D64B6522B4F18770050081E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4D64B6532B4F18910050081E /* MyList+CoreDataClass.swift */,
+				4D64B6552B4F18A50050081E /* MyList+CoreDataProperties.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +166,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D278F5F2B4EF08B0023C4E0 /* ContentView.swift in Sources */,
+				4D64B6512B4F17330050081E /* RemindersModel.xcdatamodeld in Sources */,
 				4D278F5D2B4EF08B0023C4E0 /* RemindersCloneApp.swift in Sources */,
+				4D64B6562B4F18A50050081E /* MyList+CoreDataProperties.swift in Sources */,
+				4D64B6542B4F18910050081E /* MyList+CoreDataClass.swift in Sources */,
 				4D64B64E2B4EFDAF0050081E /* CoreDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +384,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4D64B64F2B4F17330050081E /* RemindersModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4D64B6502B4F17330050081E /* RemindersModel.xcdatamodel */,
+			);
+			currentVersion = 4D64B6502B4F17330050081E /* RemindersModel.xcdatamodel */;
+			path = RemindersModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4D278F512B4EF08B0023C4E0 /* Project object */;
 }

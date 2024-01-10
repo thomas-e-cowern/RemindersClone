@@ -14,7 +14,7 @@ class CoreDataProvider {
     let persistentContainer: NSPersistentContainer
     
     init() {
-        persistentContainer = NSPersistentContainer(name: "ReminderModel")
+        persistentContainer = NSPersistentContainer(name: "RemindersModel")
         persistentContainer.loadPersistentStores { descrtiption, error in
             if let error {
                 fatalError("Error initializing Reminders Model: \(error.localizedDescription)")
