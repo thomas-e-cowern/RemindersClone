@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @FetchRequest(sortDescriptors: []) private var myListResults: FetchedResults<MyList>
+    
     @State private var isPresented: Bool = false
     
     var body: some View {
@@ -16,7 +18,10 @@ struct ContentView: View {
             VStack {
                 Text("Something or other")
                 
-                Spacer()
+                List(myListResults) { list in
+                    Text(list.name)
+                }
+//                Spacer()
                 
                 Button {
                     isPresented = true
