@@ -19,6 +19,9 @@ struct ReminderCellView: View {
             Image(systemName: checked ? "circle.inset.filled" : "circle")
                 .font(.title)
                 .opacity(0.4)
+                .onTapGesture {
+                    checked.toggle()
+                }
             
             VStack {
                 Text(reminder.title ?? "")
