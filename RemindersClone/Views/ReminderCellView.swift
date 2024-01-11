@@ -9,12 +9,14 @@ import SwiftUI
 
 struct ReminderCellView: View {
     
+    @State private var checked: Bool = false
+    
     let reminder: Reminder
     
     var body: some View {
         HStack {
             
-            Image(systemName: "circle")
+            Image(systemName: checked ? "circle.inset.filled" : "circle")
                 .font(.title)
                 .opacity(0.4)
             
