@@ -38,7 +38,11 @@ struct MyListDetailView: View {
                 // cancel entry
             }
             Button("Save") {
-                
+                do {
+                    try ReminderService.saveReminderToMyList(myList: myList, reminderTitle: title)
+                } catch {
+                    print("Problem save reminder in MyListDetailView: \(error.localizedDescription)")
+                }
             }
             .disabled(!isFormValid)
         }

@@ -27,4 +27,10 @@ class ReminderService {
         try viewContext.save()
     }
     
+    static func saveReminderToMyList(myList: MyList, reminderTitle: String) throws {
+        let reminder = Reminder(context: viewContext)
+        reminder.title = reminderTitle
+        myList.addToReminders(reminder)
+        try save()
+    }
 }

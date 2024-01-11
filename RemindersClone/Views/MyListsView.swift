@@ -30,6 +30,7 @@ struct MyListsView: View {
                 .scrollContentBackground(.hidden)
                 .navigationDestination(for: MyList.self) { list in
                     MyListDetailView(myList: list)
+                        .navigationTitle(list.name)
                 }
             }
         }
