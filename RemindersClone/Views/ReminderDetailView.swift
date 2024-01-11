@@ -11,14 +11,20 @@ struct ReminderDetailView: View {
     
     @Binding var reminder: Reminder
     
+    @State var editConfig: ReminderEditConfig = ReminderEditConfig()
+    
     var body: some View {
         NavigationView(content: {
             VStack {
                 List {
                     Section {
-                        Text("Title", text: )
+                        TextField("Title", text: $editConfig.title)
+                        TextField("Notes", text: $editConfig.notes)
                     }
                 }
+            }
+            .onAppear {
+                editConfig = ReminderEditConfig(reminder: reminder)
             }
         })
     }
