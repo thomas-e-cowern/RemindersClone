@@ -29,7 +29,7 @@ struct MyListDetailView: View {
         VStack {
             
             // List of reminders
-            
+            ReminderListView(reminders: reminderResults)
             
             HStack {
                 Image(systemName: "plus.circle.fill")
@@ -41,20 +41,23 @@ struct MyListDetailView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
         }
-        .alert("New Reminder", isPresented: $openAddReminder) {
-            TextField("", text: $title)
-            Button("Cancel", role: .cancel) {
-                // cancel entry
-            }
-            Button("Save") {
-                do {
-                    try ReminderService.saveReminderToMyList(myList: myList, reminderTitle: title)
-                } catch {
-                    print("Problem save reminder in MyListDetailView: \(error.localizedDescription)")
-                }
-            }
-            .disabled(!isFormValid)
-        }
+        .sheet(isPresented: $openAddReminder, content: {
+            AddReminderTitleView(myList: myList)
+        })
+//        .alert("New Reminder", isPresented: $openAddReminder) {
+//            TextField("", text: $title)
+//            Button("Cancel", role: .cancel) {
+//                // cancel entry
+//            }
+//            Button("Save") {
+//                do {
+//                    try ReminderService.saveReminderToMyList(myList: myList, reminderTitle: title)
+//                } catch {
+//                    print("Problem save reminder in MyListDetailView: \(error.localizedDescription)")
+//                }
+//            }
+//            .disabled(!isFormValid)
+//        }
     }
 }
 

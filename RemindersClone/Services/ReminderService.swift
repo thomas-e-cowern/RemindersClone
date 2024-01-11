@@ -16,6 +16,7 @@ class ReminderService {
     }
     
     static func saveMyList(_ name: String, _ color: UIColor) throws {
+        print("In saveMyList")
         let myList = MyList(context: viewContext)
         myList.name = name
         myList.color = color
@@ -24,20 +25,29 @@ class ReminderService {
     }
     
     static func save() throws {
-        try viewContext.save()
+        
+        do {
+            try viewContext.save()
+        } catch {
+            print("Error in save func: \(error.localizedDescription)")
+        }
+        
     }
     
     static func saveReminderToMyList(myList: MyList, reminderTitle: String) throws {
+        print("In saveReminderToMyList")
         let reminder = Reminder(context: viewContext)
         reminder.title = reminderTitle
         myList.addToReminders(reminder)
+        print("Saved reminder to \(myList)")
         try save()
     }
     
     static func getRemindersByList(myList: MyList) -> NSFetchRequest<Reminder> {
         let request = Reminder.fetchRequest()
         request.sortDescriptors = []
-        request.predicate = NSPredicate(format: "list = %@", myList)
+        request.predicate = NSPredicate(format: "list = %@ AND isCompleted = false", myList)
+        print("Request: \(request)")
         return request
     }
 }
