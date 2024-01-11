@@ -22,13 +22,14 @@ struct MyListDetailView: View {
     
     init(myList: MyList) {
         self.myList = myList
-        _reminderResults = FetchRequest(fetchRequest: Reminder.fetchRequest())
+        _reminderResults = FetchRequest(fetchRequest: ReminderService.getRemindersByList(myList: myList))
     }
     
     var body: some View {
         VStack {
             
             // List of reminders
+            
             
             HStack {
                 Image(systemName: "plus.circle.fill")
