@@ -43,6 +43,7 @@ struct MyListDetailView: View {
         }
         .sheet(isPresented: $openAddReminder, content: {
             AddReminderTitleView(myList: myList)
+                .presentationDetents([.height(200)])
         })
 //        .alert("New Reminder", isPresented: $openAddReminder) {
 //            TextField("", text: $title)

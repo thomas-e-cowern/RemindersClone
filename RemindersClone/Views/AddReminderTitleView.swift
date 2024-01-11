@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AddReminderTitleView: View {
     
+    @Environment(\.dismiss) var dismiss
+    
     @State private var title: String = ""
     
     let myList: MyList
@@ -21,17 +23,21 @@ struct AddReminderTitleView: View {
             TextField("", text: $title)
                 .multilineTextAlignment(.center)
                 .textFieldStyle(.roundedBorder)
-            Button("Cancel", role: .cancel) {
-                // cancel entry
-            }
-            Button("Save") {
-                do {
-                    try ReminderService.saveReminderToMyList(myList: myList, reminderTitle: title)
-                } catch {
-                    print("Problem save reminder in AddReminderTitleView: \(error.localizedDescription)")
+            HStack(spacing: 12) {
+                Button("Cancel", role: .cancel) {
+                    // cancel entry
+                    dismiss()
                 }
+                Button("Save") {
+                    do {
+                        try ReminderService.saveReminderToMyList(myList: myList, reminderTitle: title)
+                    } catch {
+                        print("Problem save reminder in AddReminderTitleView: \(error.localizedDescription)")
+                    }
+                    dismiss()
+                }
+                .disabled(!isFormValid)
             }
-            .disabled(!isFormValid)
         }
         .padding()
     }

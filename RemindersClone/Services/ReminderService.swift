@@ -35,11 +35,9 @@ class ReminderService {
     }
     
     static func saveReminderToMyList(myList: MyList, reminderTitle: String) throws {
-        print("In saveReminderToMyList")
         let reminder = Reminder(context: viewContext)
         reminder.title = reminderTitle
         myList.addToReminders(reminder)
-        print("Saved reminder to \(myList)")
         try save()
     }
     
@@ -47,7 +45,6 @@ class ReminderService {
         let request = Reminder.fetchRequest()
         request.sortDescriptors = []
         request.predicate = NSPredicate(format: "list = %@ AND isCompleted = false", myList)
-        print("Request: \(request)")
         return request
     }
 }
