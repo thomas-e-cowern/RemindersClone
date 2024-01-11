@@ -13,8 +13,16 @@ struct MyListDetailView: View {
     @State private var openAddReminder: Bool = false
     @State private var title: String = ""
     
+    @FetchRequest(sortDescriptors: [])
+    private var reminderResults: FetchedResults<Reminder>
+    
     private var isFormValid: Bool {
         !title.isEmpty
+    }
+    
+    init(myList: MyList) {
+        self.myList = myList
+        _reminderResults = FetchRequest(fetchRequest: Reminder.fetchRequest())
     }
     
     var body: some View {
