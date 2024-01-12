@@ -40,28 +40,30 @@ struct ReminderCellView: View {
                         onEvent(.onCheckChanged(reminder, checked))
                     }
                 }
-            
-            VStack {
-                Text(reminder.title ?? "")
-                if let notes = reminder.notes, notes.isEmpty {
-                    Text(notes)
-                        .font(.caption)
-                        .opacity(0.4)
-                }
-            }
-            
-            HStack {
-                if let date = reminder.reminderDate {
-                    Text(formatDate(date))
+            VStack(alignment: .leading) {
+                VStack(alignment: .leading) {
+                    Text(reminder.title ?? "")
+                    if let notes = reminder.notes, !notes.isEmpty {
+                        Text(notes)
+                            .font(.caption)
+                            .opacity(0.4)
+                    }
                 }
                 
-                if let time = reminder.reminderTime {
-                    Text(time.formatted(date: .omitted, time: .shortened))
+                HStack {
+                    if let date = reminder.reminderDate {
+                        Text(formatDate(date))
+                    }
+                    
+                    if let time = reminder.reminderTime {
+                        Text(time.formatted(date: .omitted, time: .shortened))
+                    }
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .font(.caption)
+                .opacity(0.4)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .font(.caption)
-            .opacity(0.4)
+
             
             Spacer()
             

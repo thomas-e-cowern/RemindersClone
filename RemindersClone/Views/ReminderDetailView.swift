@@ -15,6 +15,10 @@ struct ReminderDetailView: View {
     
     @State var editConfig: ReminderEditConfig = ReminderEditConfig()
     
+    private var isFormValid: Bool {
+        !editConfig.title.isEmpty
+    }
+    
     var body: some View {
         NavigationView(content: {
             VStack {
@@ -69,8 +73,16 @@ struct ReminderDetailView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
                         // save then dismiss
+                        do {
+                            print("editConfig: \(editConfig)")
+                            let _ = try ReminderService.updateReminder(reminder: reminder, editConfig: editConfig)
+                        } catch {
+                            print("Failed to update in reminder detail view: \(error.localizedDescription)")
+                        }
+                        
                         dismiss()
                     }
+                    .disabled(!isFormValid)
                 }
                 
                 ToolbarItem(placement: .topBarLeading) {
