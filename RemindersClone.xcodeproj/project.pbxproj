@@ -31,6 +31,7 @@
 		4D64B66B2B4F3C9A0050081E /* MyListsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64B66A2B4F3C9A0050081E /* MyListsCellView.swift */; };
 		4D64B66D2B4F3CD10050081E /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64B66C2B4F3CD10050081E /* PreviewData.swift */; };
 		4DEE9DE82B5195A60048002D /* SelectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE9DE72B5195A60048002D /* SelectListView.swift */; };
+		4DEE9DEA2B51AD700048002D /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE9DE92B51AD700048002D /* Delay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		4D64B66A2B4F3C9A0050081E /* MyListsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListsCellView.swift; sourceTree = "<group>"; };
 		4D64B66C2B4F3CD10050081E /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		4DEE9DE72B5195A60048002D /* SelectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectListView.swift; sourceTree = "<group>"; };
+		4DEE9DE92B51AD700048002D /* Delay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				4D311DB22B5052A10003DD95 /* CustomOperators.swift */,
+				4DEE9DE92B51AD700048002D /* Delay.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				4D311DA22B500DB60003DD95 /* MyListDetailView.swift in Sources */,
 				4D311DA82B503F940003DD95 /* ReminderCellView.swift in Sources */,
 				4D311DB32B5052A10003DD95 /* CustomOperators.swift in Sources */,
+				4DEE9DEA2B51AD700048002D /* Delay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
