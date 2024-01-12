@@ -46,7 +46,7 @@ struct ReminderDetailView: View {
                     
                     Section {
                         NavigationLink {
-                            Text("SelectListView")
+                            SelectListView(selectList: $reminder.list)
                         } label: {
                             HStack {
                                 Text("List")

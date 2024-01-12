@@ -30,6 +30,7 @@
 		4D64B6692B4F3B530050081E /* MyListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64B6682B4F3B530050081E /* MyListsView.swift */; };
 		4D64B66B2B4F3C9A0050081E /* MyListsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64B66A2B4F3C9A0050081E /* MyListsCellView.swift */; };
 		4D64B66D2B4F3CD10050081E /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64B66C2B4F3CD10050081E /* PreviewData.swift */; };
+		4DEE9DE82B5195A60048002D /* SelectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE9DE72B5195A60048002D /* SelectListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		4D64B6682B4F3B530050081E /* MyListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListsView.swift; sourceTree = "<group>"; };
 		4D64B66A2B4F3C9A0050081E /* MyListsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListsCellView.swift; sourceTree = "<group>"; };
 		4D64B66C2B4F3CD10050081E /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		4DEE9DE72B5195A60048002D /* SelectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				4D311DA52B5031BB0003DD95 /* AddReminderTitleView.swift */,
 				4D311DA72B503F940003DD95 /* ReminderCellView.swift */,
 				4D311DAC2B504FB10003DD95 /* ReminderDetailView.swift */,
+				4DEE9DE72B5195A60048002D /* SelectListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				4D64B64E2B4EFDAF0050081E /* CoreDataProvider.swift in Sources */,
 				4D311DA42B502B4B0003DD95 /* ReminderListView.swift in Sources */,
 				4D64B6642B4F34840050081E /* ReminderService.swift in Sources */,
+				4DEE9DE82B5195A60048002D /* SelectListView.swift in Sources */,
 				4D311DA22B500DB60003DD95 /* MyListDetailView.swift in Sources */,
 				4D311DA82B503F940003DD95 /* ReminderCellView.swift in Sources */,
 				4D311DB32B5052A10003DD95 /* CustomOperators.swift in Sources */,
