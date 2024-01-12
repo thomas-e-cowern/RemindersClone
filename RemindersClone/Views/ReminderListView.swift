@@ -52,6 +52,6 @@ struct ReminderListView: View {
     }
 }
 
-//#Preview {
-//    ReminderListView()
-//}
+#Preview {
+    ReminderListView(reminders: <#FetchedResults<Reminder>#>)
+}
