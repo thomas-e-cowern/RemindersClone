@@ -13,7 +13,16 @@ struct ReminderListView: View {
     
     var body: some View {
         List(reminders) { reminder in
-            ReminderCellView(reminder: reminder)
+            ReminderCellView(reminder: reminder) { event in
+                switch event {
+                case .onSelect(let reminder):
+                    print("On Selected")
+                case .onCheckChanged(let reminder):
+                    print("On Checked")
+                case .onInfo:
+                    print("On Info")
+                }
+            }
         }
     }
 }
