@@ -15,20 +15,25 @@ struct ReminderListView: View {
     
     var body: some View {
         VStack {
-            List(reminders) { reminder in
-                ReminderCellView(reminder: reminder, isSelected: isReminderSelected(reminder)) { event in
-                    switch event {
-                    case .onSelect(let reminder):
-                        print("On Selected")
-                        selectedReminder = reminder
-                    case .onCheckChanged(let reminder, let isCompleted):
-                        print("On Checked")
-                        reminderCheckChanged(reminder: reminder, isCompleted: isCompleted)
-                    case .onInfo:
-                        print("On Info")
-                        showReminderDetail = true
+            List {
+                ForEach(reminders) { reminder in
+                    ReminderCellView(reminder: reminder, isSelected: isReminderSelected(reminder)) { event in
+                        switch event {
+                        case .onSelect(let reminder):
+                            print("On Selected")
+                            selectedReminder = reminder
+                        case .onCheckChanged(let reminder, let isCompleted):
+                            print("On Checked")
+                            reminderCheckChanged(reminder: reminder, isCompleted: isCompleted)
+                        case .onInfo:
+                            print("On Info")
+                            showReminderDetail = true
+                        }
                     }
                 }
+                .onDelete(perform: { indexSet in
+                    deleteReminder(indexSet)
+                })
             }
         }
         .sheet(isPresented: $showReminderDetail, content: {
@@ -50,8 +55,30 @@ struct ReminderListView: View {
     private func isReminderSelected(_ reminder: Reminder) -> Bool {
         selectedReminder?.objectID == reminder.objectID
     }
+    
+    private func deleteReminder(_ indexSet: IndexSet) {
+        indexSet.forEach { index in
+            let reminder = reminders[index]
+            do {
+                try ReminderService.deleteReminder(reminder: reminder)
+            } catch {
+                print("Error deleting reminder: \(error)")
+            }
+        }
+    }
 }
 
+struct ReminderListViewContainer: View {
+    
+    @FetchRequest(sortDescriptors: []) private var reminderResults: FetchedResults<Reminder>
+    
+    var body: some View {
+        ReminderListView(reminders: reminderResults)
+    }
+}
+
+
 #Preview {
-    ReminderListView(reminders: <#FetchedResults<Reminder>#>)
+    ReminderListViewContainer()
+        .environment(\.managedObjectContext, CoreDataProvider.shared.persistentContainer.viewContext)
 }
