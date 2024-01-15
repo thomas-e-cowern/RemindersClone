@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D251F512B555F3200D0D5A3 /* StatsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D251F502B555F3200D0D5A3 /* StatsBuilder.swift */; };
 		4D278F5D2B4EF08B0023C4E0 /* RemindersCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D278F5C2B4EF08B0023C4E0 /* RemindersCloneApp.swift */; };
 		4D278F5F2B4EF08B0023C4E0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D278F5E2B4EF08B0023C4E0 /* ContentView.swift */; };
 		4D278F612B4EF08D0023C4E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D278F602B4EF08D0023C4E0 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D251F502B555F3200D0D5A3 /* StatsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBuilder.swift; sourceTree = "<group>"; };
 		4D278F592B4EF08B0023C4E0 /* RemindersClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemindersClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D278F5C2B4EF08B0023C4E0 /* RemindersCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersCloneApp.swift; sourceTree = "<group>"; };
 		4D278F5E2B4EF08B0023C4E0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				4D311DAE2B5050840003DD95 /* EditConfigs */,
 				4D64B6532B4F18910050081E /* MyList+CoreDataClass.swift */,
 				4D64B6552B4F18A50050081E /* MyList+CoreDataProperties.swift */,
+				4D251F502B555F3200D0D5A3 /* StatsBuilder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				4D64B6612B4F1CAB0050081E /* ColorPickerView.swift in Sources */,
 				4D311DA62B5031BB0003DD95 /* AddReminderTitleView.swift in Sources */,
 				4D278F5F2B4EF08B0023C4E0 /* ContentView.swift in Sources */,
+				4D251F512B555F3200D0D5A3 /* StatsBuilder.swift in Sources */,
 				4D311DB02B5050AD0003DD95 /* ReminderConfig.swift in Sources */,
 				4D64B6512B4F17330050081E /* RemindersModel.xcdatamodeld in Sources */,
 				4D64B6672B4F35B70050081E /* UIColorTransformer.swift in Sources */,
