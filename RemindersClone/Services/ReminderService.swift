@@ -72,7 +72,7 @@ class ReminderService {
         return request
     }
     
-    private func remindersStatType(statType: ReminderStatType) -> NSFetchRequest<Reminder> {
+    static func remindersByStatType(statType: ReminderStatType) -> NSFetchRequest<Reminder> {
         let request = Reminder.fetchRequest()
         request.sortDescriptors = []
         

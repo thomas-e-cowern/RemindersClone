@@ -15,6 +15,22 @@ struct ContentView: View {
     // Search results fetch request
     @FetchRequest(sortDescriptors: []) private var searchResults: FetchedResults<Reminder>
     
+    // Today reminders fetch request
+    @FetchRequest(fetchRequest: ReminderService.remindersByStatType(statType: .today))
+    private var todayResults: FetchedResults<Reminder>
+    
+    // All remidners fetch request
+    @FetchRequest(fetchRequest: ReminderService.remindersByStatType(statType: .all))
+    private var allResults: FetchedResults<Reminder>
+    
+    // Completed reminders fetch request
+    @FetchRequest(fetchRequest: ReminderService.remindersByStatType(statType: .completed))
+    private var comletedResults: FetchedResults<Reminder>
+    
+    // Scheduled reminders fetch request
+    @FetchRequest(fetchRequest: ReminderService.remindersByStatType(statType: .scheduled))
+    private var scheduleResults: FetchedResults<Reminder>
+    
     @State private var isPresented: Bool = false
     @State private var search: String = ""
     @State private var isSearching: Bool = false
@@ -30,7 +46,7 @@ struct ContentView: View {
                     
                     HStack {
                         NavigationLink {
-                            Text("Show Todays Reminders")
+                            
                         } label: {
                             ReminderStatsView(icon: "calendar", title: "Today", count: reminderStatValues.todayCount, iconColor: .red)
                         }
