@@ -68,7 +68,7 @@ class ReminderService {
     static func getRemindersBySearchTerm(_ searchTerm: String) -> NSFetchRequest<Reminder> {
         let request = Reminder.fetchRequest()
         request.sortDescriptors = []
-        request.predicate = NSPredicate(format: "title CONTAINS %@", searchTerm)
+        request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchTerm)
         return request
     }
 }
