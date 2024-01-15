@@ -11,15 +11,15 @@ struct ReminderStatsView: View {
     
     let icon: String
     let title: String
-    let count: Int?
-    let iconColor: Color = .blue
+    var count: Int?
+    var iconColor: Color? = .blue
     
     var body: some View {
         VStack {
             HStack {
                 VStack(alignment: .leading, spacing: 10) {
                     Image(systemName: icon)
-                        .foregroundStyle(iconColor)
+                        .foregroundStyle(iconColor ?? .blue)
                         .font(.title)
                     Text(title)
                         .opacity(0.8)
@@ -40,5 +40,5 @@ struct ReminderStatsView: View {
 }
 
 #Preview {
-    ReminderStatsView(icon: "calendar", title: "Today", count: 9)
+    ReminderStatsView(icon: "calendar", title: "Today", count: 9, iconColor: .blue)
 }

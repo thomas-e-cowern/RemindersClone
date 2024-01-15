@@ -19,19 +19,42 @@ struct ContentView: View {
     @State private var search: String = ""
     @State private var isSearching: Bool = false
     
+    private var reminderStatsBuilder = StatsBuilder()
+    @State private var reminderStatValues = ReminderStatsValues()
+    
     var body: some View {
         NavigationStack {
             VStack {
                 ScrollView {
                     
+                    
                     HStack {
-                        ReminderStatsView(icon: "calendar", title: "Today", count: 9)
-                        ReminderStatsView(icon: "tray.circle.fill", title: "All", count: 4)
+                        NavigationLink {
+                            Text("Show Todays Reminders")
+                        } label: {
+                            ReminderStatsView(icon: "calendar", title: "Today", count: reminderStatValues.todayCount, iconColor: .red)
+                        }
+                        
+                        NavigationLink {
+                            Text("Show All Reminders")
+                        } label: {
+                            ReminderStatsView(icon: "tray.circle.fill", title: "All", count: reminderStatValues.allCount, iconColor: .green)
+                        }
                     }
                     
                     HStack {
-                        ReminderStatsView(icon: "calendar", title: "Today", count: 9)
-                        ReminderStatsView(icon: "tray.circle.fill", title: "All", count: 4)
+                        
+                        NavigationLink {
+                            Text("Show Scheduled Reminders")
+                        } label: {
+                            ReminderStatsView(icon: "calendar.circle.fill", title: "Scheduled", count: reminderStatValues.scheduledCount)
+                        }
+                        
+                        NavigationLink {
+                            Text("Show Completed Reminders")
+                        } label: {
+                            ReminderStatsView(icon: "checkmark.circle.fill", title: "Completed", count: reminderStatValues.completedCount)
+                        }
                     }
                     
                     MyListsView(myLists: myListResults)
@@ -44,6 +67,7 @@ struct ContentView: View {
                             .font(.headline)
                     }
                     .padding()
+                    
                 }
             }
             .navigationTitle("Reminders")
@@ -56,6 +80,10 @@ struct ContentView: View {
                 ReminderListView(reminders: searchResults)
                     .opacity(isSearching ? 1 : 0)
             })
+            .onAppear {
+                print("On Appear")
+                reminderStatValues = reminderStatsBuilder.build(myListResults: myListResults)
+            }
             .sheet(isPresented: $isPresented, content: {
                 NavigationView {
                     AddNewListVIew { name, color in
@@ -73,8 +101,6 @@ struct ContentView: View {
         }
         .searchable(text: $search, placement: .navigationBarDrawer(displayMode: .always))
     }
-    
-    
 }
 
 #Preview {

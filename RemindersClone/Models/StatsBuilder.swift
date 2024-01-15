@@ -18,13 +18,18 @@ struct ReminderStatsValues {
 struct StatsBuilder {
     
     func build(myListResults: FetchedResults<MyList>) -> ReminderStatsValues {
-        
+        print("In build")
         let remindersArray = myListResults.map { $0.remindersArray }.reduce([], +)
         
         let allCount = calculateAllCount(reminders: remindersArray)
         let completedCount = calculateCompletedCount(reminders: remindersArray)
         let todayCount = calculateTodayCount(reminders: remindersArray)
         let scheduledCount = calculateScheduledCount(reminders: remindersArray)
+        
+        print("allCount: \(allCount)")
+        print("completedCount \(completedCount)")
+        print("todayCount \(todayCount)")
+        print("scheduledCount \(scheduledCount)")
         
         return ReminderStatsValues(todayCount: todayCount, scheduledCount: scheduledCount, allCount: allCount, completedCount: completedCount)
     }
