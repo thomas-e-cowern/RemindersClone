@@ -23,6 +23,17 @@ struct ContentView: View {
         NavigationStack {
             VStack {
                 ScrollView {
+                    
+                    HStack {
+                        ReminderStatsView(icon: "calendar", title: "Today", count: 9)
+                        ReminderStatsView(icon: "tray.circle.fill", title: "All", count: 4)
+                    }
+                    
+                    HStack {
+                        ReminderStatsView(icon: "calendar", title: "Today", count: 9)
+                        ReminderStatsView(icon: "tray.circle.fill", title: "All", count: 4)
+                    }
+                    
                     MyListsView(myLists: myListResults)
                     
                     Button {
@@ -35,6 +46,7 @@ struct ContentView: View {
                     .padding()
                 }
             }
+            .navigationTitle("Reminders")
             .onChange(of: search, perform: { searchTerm in
                 isSearching = !searchTerm.isEmpty ? true : false
                 searchResults.nsPredicate = ReminderService.getRemindersBySearchTerm(search).predicate
