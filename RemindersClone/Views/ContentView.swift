@@ -46,13 +46,13 @@ struct ContentView: View {
                     
                     HStack {
                         NavigationLink {
-                            
+                            ReminderListView(reminders: todayResults)
                         } label: {
                             ReminderStatsView(icon: "calendar", title: "Today", count: reminderStatValues.todayCount, iconColor: .red)
                         }
                         
                         NavigationLink {
-                            Text("Show All Reminders")
+                            ReminderListView(reminders: allResults)
                         } label: {
                             ReminderStatsView(icon: "tray.circle.fill", title: "All", count: reminderStatValues.allCount, iconColor: .green)
                         }
@@ -61,13 +61,13 @@ struct ContentView: View {
                     HStack {
                         
                         NavigationLink {
-                            Text("Show Scheduled Reminders")
+                            ReminderListView(reminders: scheduleResults)
                         } label: {
                             ReminderStatsView(icon: "calendar.circle.fill", title: "Scheduled", count: reminderStatValues.scheduledCount)
                         }
                         
                         NavigationLink {
-                            Text("Show Completed Reminders")
+                            ReminderListView(reminders: comletedResults)
                         } label: {
                             ReminderStatsView(icon: "checkmark.circle.fill", title: "Completed", count: reminderStatValues.completedCount)
                         }
