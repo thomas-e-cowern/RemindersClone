@@ -9,26 +9,42 @@ import SwiftUI
 
 struct ContentView: View {
     
+    // List fetch request
     @FetchRequest(sortDescriptors: []) private var myListResults: FetchedResults<MyList>
     
+    // Search results fetch request
+    @FetchRequest(sortDescriptors: []) private var searchResults: FetchedResults<Reminder>
+    
     @State private var isPresented: Bool = false
+    @State private var search: String = ""
+    @State private var isSearching: Bool = false
     
     var body: some View {
         NavigationStack {
             VStack {
-                
-                MyListsView(myLists: myListResults)
-//                Spacer()
-                
-                Button {
-                    isPresented = true
-                } label: {
-                    Text("Add List")
-                        .frame(maxWidth: .infinity, alignment: .trailing)
-                        .font(.headline)
+                ScrollView {
+                    MyListsView(myLists: myListResults)
+    //                Spacer()
+                    
+                    Button {
+                        isPresented = true
+                    } label: {
+                        Text("Add List")
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                            .font(.headline)
+                    }
+                    .padding()
                 }
-                .padding()
             }
+            .onChange(of: search, perform: { searchTerm in
+                isSearching = !searchTerm.isEmpty ? true : false
+                searchResults.nsPredicate = ReminderService.getRemindersBySearchTerm(search).predicate
+            })
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .overlay(alignment: .center, content: {
+                ReminderListView(reminders: searchResults)
+                    .opacity(isSearching ? 1 : 0)
+            })
             .sheet(isPresented: $isPresented, content: {
                 NavigationView {
                     AddNewListVIew { name, color in
@@ -42,9 +58,12 @@ struct ContentView: View {
                     }
                 }
             })
+            .padding()
         }
-        .padding()
+        .searchable(text: $search)
     }
+    
+    
 }
 
 #Preview {
