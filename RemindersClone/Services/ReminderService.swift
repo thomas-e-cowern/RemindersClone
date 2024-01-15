@@ -16,11 +16,9 @@ class ReminderService {
     }
     
     static func saveMyList(_ name: String, _ color: UIColor) throws {
-        print("In saveMyList")
         let myList = MyList(context: viewContext)
         myList.name = name
         myList.color = color
-        print("Saved list \(myList.name)")
         try save()
     }
     
@@ -55,7 +53,6 @@ class ReminderService {
         reminderToUpdate.notes = editConfig.notes
         reminderToUpdate.reminderDate = editConfig.hasDate ? editConfig.reminderDate: nil
         reminderToUpdate.reminderTime = editConfig.hasTime ? editConfig.reminderTime: nil
-        print("Reminder to update: \(reminderToUpdate)")
         try save()
         return true
     }
@@ -81,9 +78,11 @@ class ReminderService {
                 case .all:
                     request.predicate = NSPredicate(format: "isCompleted = false")
                 case .today:
+                    let calendar = Calendar.current
                     let today = Date()
-                    let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: today)
-                    request.predicate = NSPredicate(format: "(reminderDate >= %@) AND (reminderDate < %@)", today as NSDate, tomorrow! as NSDate)
+                    let startDate = calendar.startOfDay(for: today)
+                    let endDate = calendar.date(byAdding: .day, value: 1, to: startDate)
+                    request.predicate = NSPredicate(format: "reminderDate >= %@ AND reminderDate < %@", startDate as NSDate, endDate! as NSDate)
                 case .scheduled:
                     request.predicate = NSPredicate(format: "(reminderDate != nil OR reminderTime != nil) AND isCompleted = false")
                 case .completed:
