@@ -75,7 +75,15 @@ struct ReminderDetailView: View {
                         // save then dismiss
                         do {
                             print("editConfig: \(editConfig)")
-                            let _ = try ReminderService.updateReminder(reminder: reminder, editConfig: editConfig)
+                            let updated = try ReminderService.updateReminder(reminder: reminder, editConfig: editConfig)
+                            if updated {
+                                // check to schedule
+                                if reminder.reminderDate != nil || reminder.reminderTime != nil {
+                                    let userData = UserData(title: reminder.title, body: reminder.notes, date: reminder.reminderDate, time: reminder.reminderTime)
+                                    
+                                    NotificationManager.scheduleNotification(userData: userData)
+                                }
+                            }
                         } catch {
                             print("Failed to update in reminder detail view: \(error.localizedDescription)")
                         }
