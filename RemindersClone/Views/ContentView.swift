@@ -24,7 +24,6 @@ struct ContentView: View {
             VStack {
                 ScrollView {
                     MyListsView(myLists: myListResults)
-    //                Spacer()
                     
                     Button {
                         isPresented = true
@@ -60,7 +59,7 @@ struct ContentView: View {
             })
             .padding()
         }
-        .searchable(text: $search)
+        .searchable(text: $search, placement: .navigationBarDrawer(displayMode: .always))
     }
     
     
